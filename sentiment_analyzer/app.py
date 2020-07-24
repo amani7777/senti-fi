@@ -24,7 +24,7 @@ if __name__ == "__main__":
     st.markdown(":smile: :expressionless: :rage:  ")
     st.title('Finnish sentiment analysis')
     st.write('Finnish sentiment detection using finetuned BERT.')
-    txt = st.text_area('Text to analyze', '''Hyvaaaaaaaaaaaaa''')
+    txt = st.text_area('Text to analyze')
     if st.button('Analyze'):
         with st.spinner('Analyzing sentiment ...'):
             st.write('Sentiment:', predict(txt))
