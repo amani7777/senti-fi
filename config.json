@@ -1,10 +1,10 @@
 {
     "BERT_MODEL": "TurkuNLP/bert-base-finnish-cased-v1",
-    "PRE_TRAINED_MODEL": "assets/model_state_dict.bin",
+    "PRE_TRAINED_MODEL": "assets/bert_model_state.bin",
     "CLASS_NAMES": [
         "negative",
         "neutral",
         "positive"
     ],
-    "MAX_SEQUENCE_LEN": 100
+    "MAX_SEQUENCE_LEN": 256
 }

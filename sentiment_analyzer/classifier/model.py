@@ -5,6 +5,7 @@ import torch.nn.functional as F
 from transformers import BertTokenizer
 
 from .sentiment_classifier import SentimentClassifier
+from transformers import BertForSequenceClassification, AdamW, BertConfig
 
 with open("config.json") as json_file:
     config = json.load(json_file)
@@ -17,7 +18,9 @@ class Model:
 
         self.tokenizer = BertTokenizer.from_pretrained(config["BERT_MODEL"])
 
-        classifier = SentimentClassifier(len(config["CLASS_NAMES"]))
+        classifier = BertForSequenceClassification.from_pretrained(config["BERT_MODEL"], num_labels = 3,
+    output_attentions = False, 
+    output_hidden_states = False)
         classifier.load_state_dict(
             torch.load(config["PRE_TRAINED_MODEL"], map_location=self.device)
         )
@@ -38,7 +41,7 @@ class Model:
         attention_mask = encoded_text["attention_mask"].to(self.device)
 
         with torch.no_grad():
-            probabilities = F.softmax(self.classifier(input_ids, attention_mask), dim=1)
+            probabilities = F.softmax(self.classifier(input_ids, attention_mask)[0], dim=1)
         confidence, predicted_class = torch.max(probabilities, dim=1)
         predicted_class = predicted_class.cpu().item()
         probabilities = probabilities.flatten().cpu().numpy().tolist()
