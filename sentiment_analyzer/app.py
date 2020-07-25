@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 
-from classifier.model import  Model, get_model
+from classifier.model import  get_model
 from PIL import Image
 
 

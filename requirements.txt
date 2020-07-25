@@ -2,3 +2,6 @@ torch == 1.5.1
 transformers == 3.0.2 
 gdown == 3.11.1
 streamlit == 0.63.1
+fastapi==0.60.1
+uvicorn==0.11.6
+pydantic==1.6.1

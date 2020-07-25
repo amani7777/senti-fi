@@ -4,8 +4,9 @@ import torch
 import torch.nn.functional as F
 from transformers import BertTokenizer
 
-from .sentiment_classifier import SentimentClassifier
 from transformers import BertForSequenceClassification, AdamW, BertConfig
+
+from .utils import clean_text
 
 with open("config.json") as json_file:
     config = json.load(json_file)
@@ -28,6 +29,7 @@ class Model:
         self.classifier = classifier.to(self.device)
 
     def predict(self, text):
+        text = clean_text(text)
         encoded_text = self.tokenizer.encode_plus(
             text,
             max_length=config["MAX_SEQUENCE_LEN"],
