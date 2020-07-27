@@ -1,5 +1,5 @@
-torch==1.2.0+cpu 
-torchvision==0.4.0+cpu
+--find-links https://download.pytorch.org/whl/torch_stable.html
+torch==1.2.0+cpu
 gdown == 3.11.1
 streamlit == 0.63.1
 fastapi==0.60.1
