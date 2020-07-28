@@ -1,2 +1,4 @@
-web: sh setup.sh && mkdir assets && python bin/download_model.py && streamlit run sentiment_analyzer/app.py
+release: python bin/download_model.py
+web: uvicorn sentiment_analyzer.api:app --host=0.0.0.0 --port=${PORT:-5000}
+
 
