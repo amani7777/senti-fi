@@ -1,6 +1,5 @@
 *.zip
 *.bin
-bert-base-finnish-cased-v1/
 *.csv
 
 
