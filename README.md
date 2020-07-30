@@ -10,20 +10,32 @@ then install the necessary requirements:
 pip install -r requirements.txt
 ```
 
-## REST API
+## Inference using API
 The classifier is doplyed as an API which is built using FastApi and Uvicorn. to give a try, run ;
 
 ```
 uvicorn sentiment_analyzer.api:app
 ```
 
-## Streamlit app
+## Try it out using a Streamlit app
 The classifier can be test by interacting with a simple app built using Streamlit:
 
 ```
 streamlit run sentiment_analyzer/app.py
 ```
 
+#### Using Docker
+Build the app image
+
+```
+docker build -f Dockerfile -t app:latest .
+```
+
+then run the container
+
+```
+docker run -p 8501:8501 app:latest
+```
 
 ***
 
