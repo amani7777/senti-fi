@@ -1,14 +1,13 @@
 FROM python:3.8
 
-EXPOSE 8080
+EXPOSE 8501	
 
-
-WORKDIR /app
+WORKDIR /app	
 
 COPY requirements.txt ./requirements.txt
 
-RUN pip3 install -r requirements.txt
+RUN pip3 install -r requirements.txt	
 
-COPY . .
+COPY . .	
 
-CMD streamlit run --server.port 8080 --server.enableCORS false app.py
+CMD streamlit run sentiment_analyzer/app.py 

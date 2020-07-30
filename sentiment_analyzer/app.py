@@ -22,13 +22,19 @@ if __name__ == "__main__":
     image = Image.open('././static/fin-flag.png')
     st.image(image)
     st.markdown(":smile: :expressionless: :rage:  ")
-    st.title('Finnish sentiment analysis')
-    st.write('Finnish sentiment detection using finetuned BERT.')
-    txt = st.text_area('Text to analyze', '''Hyvaaaaaaaaaaaaa''')
+    st.title('Sentifi : Finnish sentiment analysis app')
+    st.write('Finnish Sentiment Analysis using FinBERT and Transformers with PyTorch.')
+    txt = st.text_area('Text to analyze', '''Oikein hyvä''')
+    EMOJIS_MAP = {
+        'positive' : ':smile:',
+        'neutral' : ':expressionless:',
+        'negative' : ':rage:'
+
+    }
     if st.button('Analyze'):
         with st.spinner('Analyzing sentiment ...'):
-            st.write('Sentiment:', predict(txt))
-    else:
-        st.write('Waiting for text to analyze')
+            results = predict(txt)
+            st.markdown(f'# {EMOJIS_MAP[results["sentiment"]]} {results["sentiment"]} With a confidence of {int(results["confidence"]*100)}%')
+    
 
     
