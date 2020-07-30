@@ -20,6 +20,8 @@ uvicorn sentiment_analyzer.api:app
 ## Try it out using a Streamlit app
 The classifier can be test by interacting with a simple app built using Streamlit:
 
+![Sentifi app](static/sentifi.gif "Sentifi app")
+
 ```
 streamlit run sentiment_analyzer/app.py
 ```

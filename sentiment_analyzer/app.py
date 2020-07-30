@@ -34,7 +34,7 @@ if __name__ == "__main__":
     if st.button('Analyze'):
         with st.spinner('Analyzing sentiment ...'):
             results = predict(txt)
-            st.markdown(f'# {EMOJIS_MAP[results["sentiment"]]} {results["sentiment"]} With a confidence of {int(results["confidence"]*100)}%')
+            st.markdown(f'# {EMOJIS_MAP[results["sentiment"]]} {results["sentiment"]} with a confidence of {int(results["confidence"]*100)}%')
     
 
     
