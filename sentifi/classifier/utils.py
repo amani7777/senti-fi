@@ -4,6 +4,9 @@ def clean_text(text):
     # Remove all the special characters
     text = re.sub(r'\W', ' ', str(text))
 
+    # Remove URLS
+    text = re.sub(r'^https?:\/\/.*[\r\n]*', '', text, flags=re.MULTILINE) 
+
     # remove all single characters
     text= re.sub(r'\s+[a-zA-Z]\s+', ' ', text)
 
