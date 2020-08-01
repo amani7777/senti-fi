@@ -2,7 +2,7 @@
 *.bin
 *.csv
 /.vscode
-
+twitter_credentials.json
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
