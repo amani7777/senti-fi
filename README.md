@@ -14,7 +14,7 @@ pip install -r requirements.txt
 The classifier is doplyed as an API which is built using FastApi and Uvicorn. to give a try, run ;
 
 ```
-uvicorn sentiment_analyzer.api:app
+uvicorn sentifi.api:app
 ```
 
 ## Try it out using a Streamlit app
@@ -23,7 +23,7 @@ The classifier can be test by interacting with a simple app built using Streamli
 ![Sentifi app](static/sentifi.gif "Sentifi app")
 
 ```
-streamlit run sentiment_analyzer/app.py
+streamlit run sentifi/app.py
 ```
 
 #### Using Docker
