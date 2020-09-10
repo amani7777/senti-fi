@@ -1,0 +1,20 @@
+[[source]]
+url = "https://pypi.python.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+torch = "==1.2.0"
+gdown = "==3.11.1"
+streamlit = "==0.63.1"
+fastapi = "==0.60.1"
+uvicorn = "==0.11.7"
+pydantic = "==1.6.1"
+transformers = "==3.0.2"
+plotly = "==4.9.0"
+twython = "==3.8.2"
+
+[dev-packages]
+
+[requires]
+python_version = "3.8"
